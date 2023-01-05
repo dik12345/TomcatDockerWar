@@ -3,19 +3,19 @@ pipeline {
      stages {
           stage("Compile") {
                steps {
-                    sh "/usr/share/maven compile"
+                    sh "/usr/bin/mvn compile"
                }
           }
           stage("Unit test") {
                steps {
-                    sh "/usr/share/maven test"
+                    sh "/usr/bin/mvn test"
                }
           }
      
     
 stage("Package") {
      steps {
-          sh "/usr/share/maven package"
+          sh "/usr/bin/mvn package"
      }
 }
 stage("Docker build") {
